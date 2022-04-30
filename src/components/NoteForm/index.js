@@ -15,6 +15,11 @@ const NoteForm = ({ onSubmit, initialSate, buttonValue, afterSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (formValue.trim() === '') {
+      return
+    }
+
     if (formValue && !initialSate.id) {
       const note = { ...initialSate }
 
